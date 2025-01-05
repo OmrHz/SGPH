@@ -96,10 +96,10 @@ def get_api_data(request):
             })
 
         # Update ordonnance status via API
-        # if is_valid:
-        #     requests.put(f"{API_VALIDE}/{ordonnance['IdOrdonnance']}", headers=headers)
-        # else:
-        #     requests.put(f"{API_NONVALIDE}/{ordonnance['IdOrdonnance']}", headers=headers)
+           if is_valid:
+             requests.put(f"{API_VALIDE}/{ordonnance['IdOrdonnance']}", headers=headers)
+           else:
+             requests.put(f"{API_NONVALIDE}/{ordonnance['IdOrdonnance']}", headers=headers)
 
         return JsonResponse({'results': results}, safe=False)
 
